@@ -23,6 +23,18 @@
 
     .card-body {
         padding: variables.$padding-regular;
+
+        @include mixins.respond-to(small) {
+            padding: 0.5rem;
+        }
+
+        @include mixins.respond-to(medium) {
+            padding: 0.75rem;
+        }
+
+        @include mixins.respond-to(large) {
+            padding: variables.$padding-regular;
+        }
     }
 
     h3 {
@@ -31,6 +43,18 @@
         text-align: center;
         margin: 0.5rem 0;
         padding: 0 1rem;
+
+        @include mixins.respond-to(small) {
+            font-size: 1.375rem;
+        }
+
+        @include mixins.respond-to(medium) {
+            font-size: 1.5625rem;
+        }
+
+        @include mixins.respond-to(large) {
+            font-size: 1.75rem;
+        }
     }
 
     h5 {
@@ -38,10 +62,38 @@
         font-size: 1.25rem;
         color: variables.$subheading-color;
         padding: 0.75rem 0;
+
+        @include mixins.respond-to(small) {
+            font-size: variables.$font-size-base;
+        }
+
+        @include mixins.respond-to(medium) {
+            font-size: 1.125rem;
+        }
+
+        @include mixins.respond-to(large) {
+            font-size: 1.25rem;
+        }
     }
 
     p {
         margin-bottom: variables.$margin-bottom-regular;
+
+        @include mixins.respond-to(small) {
+            margin-bottom: 0.75rem;
+        }
+
+        @include mixins.respond-to(medium) {
+            margin-bottom: 0.85rem;
+        }
+
+        @include mixins.respond-to(large) {
+            margin-bottom: variables.$margin-bottom-regular;
+        }
+    }
+
+        @include mixins.respond-to(medium) {
+            flex: 1 1 300px;
     }
 }
 
@@ -50,9 +102,42 @@
     box-sizing: border-box;
     min-width: 21.875rem;
     margin: 0.625rem;
+    @include mixins.flexbox($direction: column);
+
     text-align: center;
     padding: 0.625rem;
     height: 100%;
+
+    &:nth-child(3) {
+        @include mixins.respond-to(small) {
+            height: 250px;
+
+        }
+    }
+
+    &:nth-child(4) {
+        @include mixins.respond-to(small) {
+            height: 260px;
+        }
+    }
+
+    &:nth-child(5) {
+        img {
+            object-fit: contain;
+
+            @include mixins.respond-to(small) {
+                object-fit: cover;
+                object-position: bottom;
+                height: 420px;
+            }
+        }
+
+    }
+
+    @include mixins.respond-to(small) {
+        margin: 0;
+        padding: 0;
+    }
 
     &:hover {
         box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
@@ -64,6 +149,15 @@
         object-fit: contain;
         margin-bottom: variables.$margin-bottom-regular;
         flex-grow: 1;
+
+        @include mixins.respond-to(small) {
+            width: 70%;
+            height: 280px;
+            margin-bottom: 0;
+            object-position: top;
+
+
+        }
     }
 
     h3 {
